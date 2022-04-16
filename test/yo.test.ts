@@ -1,4 +1,4 @@
-import assert from "assert/strict"
+import * as assert from "assert/strict"
 import { getENS } from "../src"
 
 const test_cases: [string, string][] = [

@@ -5,7 +5,7 @@
 ## Installation
 
 ```
-npm install give-ens-name
+npm install ens-light
 ```
 
 ## Usage
@@ -38,18 +38,18 @@ import * as React from "react"
 import { getENS } from "ens-light"
 
 export const useENS = (address: string) => {
- const [ensName, setEnsName] = React.useState<string | null>(null)
+	const [ensName, setEnsName] = React.useState<string | null>(null)
 
- React.useEffect(() => {
-  getENS(address).then(setEnsName)
- }, [address])
+	React.useEffect(() => {
+		getENS(address).then(setEnsName)
+	}, [address])
 
- return ensName
+	return ensName
 }
 
 export const ENSComponent = () => {
- const ensName = useENS("0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045")
+	const ensName = useENS("0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045")
 
- return <div>{ensName}</div>
+	return <div>{ensName}</div>
 }
 ```

@@ -1,4 +1,4 @@
-# getENS(\<address>\)
+# ENS Light ❄
 
 ### Giga tiny function to get ENS name of an address
 
@@ -10,20 +10,19 @@ npm install give-ens-name
 
 ## Usage
 
-### 📝 Simple use case
+### 📝. Simple use case
 
 ```ts
-import { getENS } from "give-ens-name"
+import { getENS } from "ens-light"
 
-const ensName = await getENS("0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045")
+const address = "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045"
+
+const ensName = await getENS(address)
 
 console.log(ensName)
 // -> "vitalik.eth"
 
-const withAvatar = await getENS(
- "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045",
- { includeAvatar: true }
-)
+const withAvatar = await getENS(address, { includeAvatar: true })
 
 console.log(withAvatar)
 // {
@@ -32,11 +31,11 @@ console.log(withAvatar)
 // }
 ```
 
-### ⚛️ React custom hook
+### ⚛️. React custom hook
 
 ```ts
 import * as React from "react"
-import { getENS } from "give-ens-name"
+import { getENS } from "ens-light"
 
 export const useENS = (address: string) => {
  const [ensName, setEnsName] = React.useState<string | null>(null)
@@ -48,7 +47,7 @@ export const useENS = (address: string) => {
  return ensName
 }
 
-export default function App() {
+export const ENSComponent = () => {
  const ensName = useENS("0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045")
 
  return <div>{ensName}</div>

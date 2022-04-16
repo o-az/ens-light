@@ -1,6 +1,6 @@
 # giveEnsName(\<address>\)
 
-### Giga tiny function to get ENS name of an address 🤏
+### Giga tiny function to get ENS name of an address
 
 ## Installation
 

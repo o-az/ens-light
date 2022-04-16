@@ -1,6 +1,6 @@
 {
 	"name": "give-ens-name",
-	"version": "1.0.0",
+	"version": "0.0.2",
 	"description": "pass ethereum address, get ens name",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
@@ -13,9 +13,11 @@
 	"bugs": {
 		"url": "https://github.com/o-az/give-ens-name/issues"
 	},
+	"homepage": "https://github.com/o-az/give-ens-name",
 	"scripts": {
 		"build": "tsc",
-		"run": "NODE_OPTIONS=\"--experimental-fetch --no-warnings\" npx ts-node --skip-project -T -r tsconfig-paths/register src/index.ts",
+		"publish": "npm publish",
+		"run": "NODE_OPTIONS=\"--experimental-fetch --no-warnings\" npx ts-node --skip-project -T -r tsconfig-paths/register $npm_config_path",
 		"test": "NODE_OPTIONS=\"--experimental-fetch --no-warnings\" npx ts-node --skip-project -T -r tsconfig-paths/register src/yo.test.ts"
 	},
 	"dependencies": {

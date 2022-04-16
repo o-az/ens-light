@@ -9,11 +9,12 @@
       "ESNext",
       "DOM"
     ],
-    "outDir": "./dir",
+    "baseUrl": ".",
     "strict": true,
-    "noEmit": true,
+    "rootDir": "src",
+    "outDir": "./dist",
     "incremental": true,
-    "skipLibCheck": true,
+    "declaration": true,
     "alwaysStrict": true,
     "importHelpers": true,
     "noImplicitAny": true,
@@ -30,13 +31,14 @@
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "baseUrl": "."
+    "noPropertyAccessFromIndexSignature": true
   },
   "include": [
-    "src/index.ts"
+    "src",
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "src/private.ts",
+    "dist"
   ]
 }

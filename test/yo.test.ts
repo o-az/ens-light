@@ -1,5 +1,5 @@
-import * as assert from "assert/strict"
-import { giveEnsName } from "."
+import assert from "assert/strict"
+import { getENS } from "../src"
 
 const test_cases: [string, string][] = [
 	["0xcc719d0ef7c044543efd2686695ded5f24978cf3", "skaret.eth"],
@@ -29,10 +29,9 @@ const test_cases: [string, string][] = [
 ]
 
 test_cases.forEach(async ([address, name]) => {
-	const resolvedName = await giveEnsName(address)
+	const { name: resolvedName } = await getENS(address)
 	assert(
 		resolvedName === name,
 		`${address} resolved to ${resolvedName} instead of ${name}`
 	)
 })
-

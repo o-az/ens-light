@@ -1,7 +1,11 @@
-/**
- * TODO: Comments
- */
-export async function giveEnsName(address: string): Promise<string> {
+export async function getENS(
+	address: string,
+	{
+		includeAvatar = false,
+	}: {
+		includeAvatar?: boolean
+	} = {}
+): Promise<{ name: string; avatar?: string }> {
 	const resolver = await getResolver(address)
 	const { result, error } = await rpcRequest({
 		address,
@@ -11,7 +15,10 @@ export async function giveEnsName(address: string): Promise<string> {
 	if (error || !result) {
 		throw new Error(error?.message || "yikes, query failed")
 	}
-	return hexToString(result)
+	const name = hexToString(result)
+	if (!includeAvatar) return { name }
+	const avatar = await getAvatar(name)
+	return { name, avatar }
 }
 
 async function rpcRequest({
@@ -42,8 +49,16 @@ async function rpcRequest({
 			],
 		}),
 	})
-	const json = await response.json()
-	return json
+	return await response.json()
+}
+
+async function getAvatar(name: string): Promise<string> {
+	const url = `https://metadata.ens.domains/mainnet/avatar/${name}`
+	const response = await fetch(url, { method: "HEAD" })
+	if (response.status !== 200) {
+		return "There is no avatar set under given address"
+	}
+	return `https://metadata.ens.domains/mainnet/avatar/${name}`
 }
 
 function hexToString(hex: string) {
@@ -51,7 +66,6 @@ function hexToString(hex: string) {
 	for (let i = 0; i < hex.length; i += 2) {
 		string += String.fromCharCode(parseInt(hex.substr(i, 2), 16))
 	}
-
 	// remove spaces and trailing null bytes and \u000
 	return string
 		.replace(/\0/g, "")

@@ -2,8 +2,6 @@
 
 ### Giga tiny function to get ENS name of an address. You can use it in your own code
 
----
-
 ## Installation
 
 ```

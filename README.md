@@ -7,6 +7,7 @@
 ```
 npm install give-ens-name
 ```
+
 ## Usage
 
 ### 📝 Simple use case
@@ -27,18 +28,18 @@ import * as React from "react"
 import { giveEnsName } from "give-ens-name"
 
 export const useENS = (address: string) => {
-	const [ensName, setEnsName] = React.useState<string | null>(null)
+  const [ensName, setEnsName] = React.useState<string | null>(null)
 
-	React.useEffect(() => {
-		giveEnsName(address).then(setEnsName)
-	}, [address])
+  React.useEffect(() => {
+    giveEnsName(address).then(setEnsName)
+  }, [address])
 
-	return ensName
+  return ensName
 }
 
 export default function App() {
-	const ensName = useENS("0x60abfaab599b78660d994ccfcca44668945e519d")
+  const ensName = useENS("0x60abfaab599b78660d994ccfcca44668945e519d")
 
-	return <div>{ensName}</div>
+  return <div>{ensName}</div>
 }
 ```

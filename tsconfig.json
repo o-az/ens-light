@@ -1,44 +1,27 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "jsx": "preserve",
-    "sourceMap": true,
-    "target": "ESNext",
-    "module": "ESNext",
-    "lib": [
-      "ESNext",
-      "DOM"
-    ],
-    "baseUrl": ".",
-    "strict": true,
     "rootDir": "src",
     "outDir": "./dist",
-    "incremental": true,
+    "target": "es6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "declaration": true,
-    "alwaysStrict": true,
-    "importHelpers": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "noUnusedLocals": true,
+    "strict": true,
+    "allowJs": true,
     "esModuleInterop": true,
-    "isolatedModules": true,
-    "strictNullChecks": true,
-    "resolveJsonModule": true,
-    "noImplicitReturns": true,
-    "moduleResolution": "node",
-    "noUnusedParameters": true,
-    "noUncheckedIndexedAccess": true,
-    "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "noPropertyAccessFromIndexSignature": true
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "isolatedModules": true
   },
   "include": [
-    "src",
+    "src"
   ],
   "exclude": [
-    "node_modules",
-    "src/private.ts",
-    "dist"
+    ".scratch"
   ]
 }

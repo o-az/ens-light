@@ -1,7 +1,7 @@
 export async function getENS(
 	address: string,
 	{
-		includeAvatar = false,
+		includeAvatar = false
 	}: {
 		includeAvatar?: boolean
 	} = {}
@@ -10,7 +10,7 @@ export async function getENS(
 	const { result, error } = await rpcRequest({
 		address,
 		hashedMethodSig: "0x691f3431",
-		to: resolver,
+		to: resolver
 	})
 	if (error || !result) {
 		throw new Error(error?.message || "yikes, query failed")
@@ -24,7 +24,7 @@ export async function getENS(
 async function rpcRequest({
 	address,
 	hashedMethodSig,
-	to,
+	to
 }: {
 	address: string
 	hashedMethodSig: string
@@ -43,11 +43,8 @@ async function rpcRequest({
 			"jsonrpc": "2.0",
 			"method": "eth_call",
 			"id": 1,
-			"params": [
-				{ "data": `${hashedMethodSig}${hashedAddress}`, to },
-				"latest",
-			],
-		}),
+			"params": [{ "data": `${hashedMethodSig}${hashedAddress}`, to }, "latest"]
+		})
 	})
 	return await response.json()
 }
@@ -86,7 +83,7 @@ async function getResolver(address: string) {
 	const { result, error } = await rpcRequest({
 		address,
 		hashedMethodSig: "0x0178b8bf",
-		to: "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e",
+		to: "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e"
 	})
 	if (error || !result) return ""
 	const resolver = `0x${result.slice(26, 66)}`
@@ -110,7 +107,7 @@ function normalizer(
 	name: string,
 	{
 		useStd3ASCII = true,
-		transitional = false,
+		transitional = false
 	}: {
 		useStd3ASCII?: boolean
 		transitional?: boolean

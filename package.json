@@ -1,6 +1,6 @@
 {
 	"name": "ens-light",
-	"version": "0.0.1",
+	"version": "0.0.12",
 	"description": "pass ethereum address, get ens name & avatar",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",

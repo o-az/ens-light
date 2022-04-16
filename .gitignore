@@ -3,3 +3,4 @@ node_modules
 /src/private.ts
 dist
 *.tsbuildinfo
+.DS_Store

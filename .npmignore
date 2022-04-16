@@ -1,2 +1,5 @@
-node_modules
-test
+/node_modules/
+/test/
+.npmignore
+.github
+tsconfig.tsbuildinfo

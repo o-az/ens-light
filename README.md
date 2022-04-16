@@ -1,7 +1,5 @@
 # giveEnsName(\<address>\)
 
-###
-
 ### Giga tiny function to get ENS name of an address. You can use it in your own code
 
 ---
@@ -11,7 +9,6 @@
 ```
 npm install give-ens-name
 ```
-
 ## Usage
 
 ### 📝 Simple use case

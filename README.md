@@ -24,7 +24,7 @@ console.log(ensName)
 
 ```ts
 import * as React from "react"
-import { useGiveEnsName } from "give-ens-name"
+import { giveEnsName } from "give-ens-name"
 
 export const useENS = (address: string) => {
 	const [ensName, setEnsName] = React.useState<string | null>(null)

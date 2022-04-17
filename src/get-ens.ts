@@ -1,3 +1,5 @@
+import { keccak256 } from "js-sha3"
+
 export async function getENS(
 	address: string,
 	{
@@ -91,8 +93,6 @@ async function getResolver(address: string) {
 }
 
 async function namehash(address: string) {
-	const { keccak256 } =
-		typeof window !== undefined ? await import("js-sha3") : require("js-sha3")
 	let bytes = "00".repeat(32)
 	const normalized = normalizer(address)
 	const labels = ["reverse", "addr", normalized.slice(2).toLowerCase()]

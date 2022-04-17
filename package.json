@@ -1,9 +1,22 @@
 {
+	"exports": {
+		".": {
+      "default": "./dist/get-ens.js"
+    }
+	},
+	"dependencies": {
+		"js-sha3": "^0.8.0"
+	},
+	"devDependencies": {
+		"typescript": "^4.6.3",
+		"@types/node": "^17.0.24",
+		"tsconfig-paths": "^3.14.1"
+	},
 	"name": "ens-light",
-	"version": "0.0.13",
+	"version": "0.0.16",
 	"description": "pass ethereum address, get ens name & avatar",
-	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
+	"main": "dist/get-ens.js",
+	"types": "dist/get-ens.d.ts",
 	"author": "Omar - https://github.com/o-az",
 	"license": "MIT",
 	"repository": {
@@ -19,14 +32,6 @@
 		"publish": "npm publish",
 		"run": "NODE_OPTIONS=\"--experimental-fetch --no-warnings\" npx ts-node --skip-project -T -r tsconfig-paths/register $npm_config_path",
 		"test": "NODE_OPTIONS=\"--experimental-fetch --no-warnings\" npx ts-node --skip-project -T -r tsconfig-paths/register src/yo.test.ts"
-	},
-	"dependencies": {
-		"js-sha3": "^0.8.0"
-	},
-	"devDependencies": {
-		"@types/node": "^17.0.24",
-		"tsconfig-paths": "^3.14.1",
-		"typescript": "^4.6.3"
 	},
 	"keywords": [
 		"ENS",

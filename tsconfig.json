@@ -2,21 +2,24 @@
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "./dist",
-    "target": "es6",
+    "target": "ES6",
     "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
+      "ESNext",
+      "DOM",
+      "DOM.Iterable"
     ],
-    "declaration": true,
     "strict": true,
     "allowJs": true,
+    "declaration": true,
+    "module": "CommonJS",
+    "isolatedModules": true,
     "esModuleInterop": true,
+    "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "isolatedModules": true
+    "types": [
+      "node"
+    ]
   },
   "include": [
     "src"

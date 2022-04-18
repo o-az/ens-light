@@ -1,65 +1,65 @@
+
 # ENS Light ❄
 
-### Giga tiny function to get ENS name of an address
+### Super tiny function to get ENS name of an address
 
 ## Installation
-
 ```
 npm install ens-light
 ```
-
 ## Usage
 
-### 📝. Simple use case
+### 📝 Simple use case
 
-```js
-import { getENS } from "ens-light"
+```ts
+import { getENS } from 'ens-light';
 
 const address = "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045"
-
-const ensName = await getENS(address)
-
-console.log(ensName)
+getENS(address).then(console.log)
 // "vitalik.eth"
 
-const withAvatar = await getENS(address, { includeAvatar: true })
-
-console.log(withAvatar)
+getENS(address, { includeAvatar: true }).then(console.log)
 // {
 //  name: 'vitalik.eth',
 //  avatar: 'https://metadata.ens.domains/mainnet/avatar/vitalik.eth'
 // }
 ```
 
-### ⚛️. React custom hook
+### ⚛️ React custom hook ([see it in action and play with it](https://stackblitz.com/edit/react-ts-rfohuw?file=index.tsx))
 
-```js
-import * as React from "react"
-import { getENS } from "ens-light"
+```ts
+import * as React from 'react';
+import { getENS } from 'ens-light';
 
-export const useENS = (address, { includeAvatar = false } = {}) => {
-	const [ens, setENS] = React.useState({ name: null, avatar: null })
+type UseENS = (
+  address: string,
+  { includeAvatar: boolean }
+) => [name: string, avatar: string];
 
-	React.useEffect(() => {
-		getENS(address, { includeAvatar }).then(({ name, avatar }) => {
-			// You might want to cache in localStorage
-			// and check that first instead of fetching every time
-			setENS({ name, avatar })
-		})
-	}, [address, includeAvatar])
+export const useENS: UseENS = (address, { includeAvatar }) => {
+  const [[name, avatar], setENS] = React.useState<Array<string>>([]);
 
-	return ens
-}
+  React.useEffect(() => {
+    const getAndSetEnsData = async () => {
+      const { name, avatar } = await getENS(address, { includeAvatar });
+      setENS(() => [name, avatar]);
+    };
+    getAndSetEnsData();
+  }, [address, includeAvatar]);
+
+  return [name, avatar];
+};
 
 export default function App() {
-	const address = "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045"
-	const { name, avatar } = useENS(address, { includeAvatar: true })
+  const [name, avatar] = useENS('0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045', {
+    includeAvatar: true,
+  });
 
-	return (
-		<figure>
-			<img src={avatar} alt={name} height={200} width={200} />
-			<figcaption>{name}</figcaption>
-		</figure>
-	)
+  return (
+    <figure>
+      <img src={avatar} alt={name} height={200} width={200} />
+      <figcaption>{name}</figcaption>
+    </figure>
+  );
 }
 ```

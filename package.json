@@ -15,7 +15,7 @@
 		"typescript": "^4.6.3"
 	},
 	"name": "ens-light",
-	"version": "0.0.19",
+	"version": "0.0.20",
 	"description": "pass ethereum address, get ens name & avatar",
 	"main": "dist/get-ens.js",
 	"types": "dist/get-ens.d.ts",

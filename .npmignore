@@ -3,3 +3,6 @@
 .npmignore
 .github
 tsconfig.tsbuildinfo
+.env
+yarn.lock
+test

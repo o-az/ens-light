@@ -9,11 +9,13 @@
 	},
 	"devDependencies": {
 		"@types/node": "^17.0.24",
+		"ts-node": "^10.7.0",
+		"tsconfig": "^7.0.0",
 		"tsconfig-paths": "^3.14.1",
 		"typescript": "^4.6.3"
 	},
 	"name": "ens-light",
-	"version": "0.0.17",
+	"version": "0.0.19",
 	"description": "pass ethereum address, get ens name & avatar",
 	"main": "dist/get-ens.js",
 	"types": "dist/get-ens.d.ts",
@@ -26,7 +28,7 @@
 	"bugs": {
 		"url": "https://github.com/o-az/give-ens-name/issues"
 	},
-	"homepage": "https://github.com/o-az/give-ens-name",
+	"homepage": "https://github.com/o-az/give-ens-name/#readme",
 	"scripts": {
 		"build": "tsc",
 		"publish": "npm publish",

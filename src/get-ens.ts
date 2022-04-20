@@ -25,10 +25,6 @@ interface QueryResult {
   >
 }
 
-getENS('0x9FB7E6090096C3A0a6b085C8e33d99e5610234fa', { includeAvatar: true }).then(_ =>
-  console.log(JSON.stringify(_, null, 2))
-)
-
 export async function getENS(
   userAddress: string,
   { includeAvatar = false } = {}

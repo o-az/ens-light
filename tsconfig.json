@@ -10,10 +10,11 @@
     ],
     "strict": true,
     "allowJs": true,
+    "module": "ESNext",
     "declaration": true,
-    "module": "CommonJS",
     "isolatedModules": true,
     "esModuleInterop": true,
+    "strictNullChecks": true,
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
@@ -23,5 +24,12 @@
   },
   "include": [
     "src"
-  ]
+  ],
+  "ts-node": {
+    "esm": true,
+    "transpileOnly": true,
+    "compilerOptions": {
+      "module": "ESNext"
+    },
+  }
 }

@@ -1,44 +1,44 @@
 {
-	"exports": {
-		".": {
-			"default": "./dist/get-ens.js"
-		}
-	},
-	"dependencies": {
-		"js-sha3": "^0.8.0"
-	},
-	"devDependencies": {
-		"@types/node": "^17.0.24",
-		"ts-node": "^10.7.0",
-		"tsconfig": "^7.0.0",
-		"tsconfig-paths": "^3.14.1",
-		"typescript": "^4.6.3"
-	},
-	"name": "ens-light",
-	"version": "0.0.20",
-	"description": "pass ethereum address, get ens name & avatar",
-	"main": "dist/get-ens.js",
-	"types": "dist/get-ens.d.ts",
-	"author": "Omar - https://github.com/o-az",
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/o-az/give-ens-name"
-	},
-	"bugs": {
-		"url": "https://github.com/o-az/give-ens-name/issues"
-	},
-	"homepage": "https://github.com/o-az/give-ens-name/#readme",
-	"scripts": {
-		"build": "tsc",
-		"publish": "npm publish",
-		"run": "NODE_OPTIONS=\"--experimental-fetch --no-warnings\" npx ts-node --skip-project -T -r tsconfig-paths/register $npm_config_path",
-		"test": "NODE_OPTIONS=\"--experimental-fetch --no-warnings\" npx ts-node --skip-project -T -r tsconfig-paths/register src/yo.test.ts"
-	},
-	"keywords": [
-		"ENS",
-		"ethereum",
-		"resolver",
-		"hook"
-	]
+  "exports": {
+    ".": {
+      "default": "./dist/get-ens.js"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@swc-node/register": "^1.4.2",
+    "@types/node": "^17.0.24",
+    "ts-node": "^10.7.0",
+    "tsconfig": "^7.0.0",
+    "tsconfig-paths": "^3.14.1",
+    "typescript": "^4.6.3"
+  },
+  "name": "ens-light",
+  "version": "0.0.20",
+  "description": "pass ethereum address, get ens name & avatar",
+  "main": "dist/get-ens.js",
+  "types": "dist/get-ens.d.ts",
+  "author": "Omar - https://github.com/o-az",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/o-az/give-ens-name"
+  },
+  "bugs": {
+    "url": "https://github.com/o-az/give-ens-name/issues"
+  },
+  "homepage": "https://github.com/o-az/give-ens-name/#readme",
+  "scripts": {
+    "build": "tsc",
+    "publish": "npm publish",
+    "run": "NODE_OPTIONS=\"--experimental-fetch --no-warnings\" npx ts-node --skip-project -T -r tsconfig-paths/register $npm_config_path",
+    "swc": "NODE_OPTIONS=\"--experimental-fetch --no-warnings\" node -r @swc-node/register $npm_config_path",
+    "test": "NODE_OPTIONS=\"--experimental-fetch --no-warnings\" npx ts-node --skip-project -T -r tsconfig-paths/register src/yo.test.ts"
+  },
+  "keywords": [
+    "ENS",
+    "ethereum",
+    "resolver",
+    "hook"
+  ]
 }

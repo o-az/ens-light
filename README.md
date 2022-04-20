@@ -1,16 +1,12 @@
 
 # ENS Light ❄
-
 ### Super tiny function to get ENS name of an address
-
 ## Installation
 ```
 npm install ens-light
 ```
 ## Usage
-
 ### 📝 Simple use case
-
 ```ts
 import { getENS } from 'ens-light';
 
@@ -26,7 +22,6 @@ getENS(address, { includeAvatar: true }).then(console.log)
 ```
 
 ### ⚛️ React custom hook ([see it in action and play with it](https://stackblitz.com/edit/react-ts-rfohuw?file=index.tsx))
-
 ```ts
 import * as React from 'react';
 import { getENS } from 'ens-light';

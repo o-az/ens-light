@@ -6,3 +6,11 @@ tsconfig.tsbuildinfo
 .env
 yarn.lock
 test
+hashed-signatures.ts
+./src/hashed-signatures.tss
+.eslintrc.js
+.eslintignore
+.prettierrc.js
+.prettierignore
+.editorconfig
+tsconfig.json
